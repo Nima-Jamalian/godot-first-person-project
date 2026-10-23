@@ -1,13 +1,13 @@
 # Godot First-Person Project Sample
 
-A basic 3D first-person project made with **Godot 4.7.2**, featuring first-person character movement, shooting mechanics, a basic level, and environment settings.
+A 3D first-person project made with **Godot 4.7.2**, featuring first-person character movement, shooting mechanics, a basic level, and environment settings.
 
 ## Features
 
-- **First-Person Character Movement** – Basic player movement and camera controls.
+- **First-Person Character Movement** – Player movement and camera controls.
 - **Shooting Mechanics** – A basic shooting system.
 - **Basic Level** – A simple 3D level for testing movement and shooting.
-- **Environment Settings** – Basic environment, lighting, and scene settings.
+- **Environment Settings** – Environment, lighting, and scene settings.
 
 ## Built With
 
