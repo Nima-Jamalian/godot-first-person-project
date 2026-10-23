@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Godot First Person Project Sample (3D)"
+config/name="Godot First Person Project"
 run/main_scene="uid://dtg2j7a7g55ky"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://b7qfj67buhf4l"
