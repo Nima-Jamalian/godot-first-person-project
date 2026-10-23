@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cubdkoen0tse4"]
+
+[ext_resource type="Script" uid="uid://vlv8ocerth13" path="res://scripts/player.gd" id="1_8afob"]
+[ext_resource type="PackedScene" uid="uid://bf37jb2jxj2vy" path="res://assets/models/blaster-b.glb" id="2_dovo2"]
+[ext_resource type="AudioStream" uid="uid://c8sgorkf4x356" path="res://assets/audio/laser1.ogg" id="3_gmlin"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7p2l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8afob"]
+
+[node name="Player" type="CharacterBody3D" unique_id=58361335]
+script = ExtResource("1_8afob")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1606434460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_x7p2l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=121345926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_8afob")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=5276453]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="gun" parent="Camera3D" unique_id=1277377984 instance=ExtResource("2_dovo2")]
+transform = Transform3D(0.99939084, 0.0012179748, 0.034878235, 0, 0.99939084, -0.034899496, -0.034899496, 0.034878235, 0.99878204, 0.33459997, -0.29354835, -0.57810247)
+
+[node name="Marker3D" type="Marker3D" parent="Camera3D" unique_id=1281412088]
+unique_name_in_owner = true
+transform = Transform3D(0.99939084, 0.0012179748, 0.034878235, 0, 0.99939084, -0.034899496, -0.034899496, 0.034878235, 0.99878204, 0.31018767, -0.28279847, -0.8260374)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=443256617]
+unique_name_in_owner = true
+stream = ExtResource("3_gmlin")

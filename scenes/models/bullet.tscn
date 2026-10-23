@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d047j0f3m0wum"]
+
+[ext_resource type="PackedScene" uid="uid://sm1jppb1kseo" path="res://assets/models/bullet-foam-tip.glb" id="1_d1wqo"]
+[ext_resource type="Script" uid="uid://cxyjw2hjapgwv" path="res://scripts/bullet.gd" id="1_fyw4p"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_657aw"]
+radius = 0.032497764
+
+[node name="Bullet" type="Area3D" unique_id=1877008100]
+top_level = true
+script = ExtResource("1_fyw4p")
+
+[node name="bullet-foam-tip2" parent="." unique_id=1009031348 instance=ExtResource("1_d1wqo")]
+transform = Transform3D(2.0958629, 0, 0, 0, -9.161308e-08, 2.0958629, 0, -2.0958629, -9.161308e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=20244625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.103036344)
+shape = SubResource("SphereShape3D_657aw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

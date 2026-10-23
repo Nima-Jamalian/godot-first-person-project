@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://dtg2j7a7g55ky"]
+
+[ext_resource type="Material" uid="uid://cm5cvc6rnqkhs" path="res://resources/materials/ground.tres" id="1_fke1l"]
+[ext_resource type="PackedScene" uid="uid://cubdkoen0tse4" path="res://scenes/player/player.tscn" id="1_lx3qq"]
+[ext_resource type="Texture2D" uid="uid://d2p1xgbttwvkk" path="res://assets/reticle.png" id="2_ojqrr"]
+[ext_resource type="PackedScene" uid="uid://cl74ql41gtlxd" path="res://scenes/models/target.tscn" id="4_hn3as"]
+[ext_resource type="Texture2D" uid="uid://b7qfj67buhf4l" path="res://icon.svg" id="5_geiq8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lx3qq"]
+sky_top_color = Color(0.43533728, 0.5701175, 0.86048055, 1)
+sky_horizon_color = Color(0.8042954, 0.8291694, 0.8918381, 1)
+ground_bottom_color = Color(0.23296225, 0.19767779, 0.15798959, 1)
+ground_horizon_color = Color(0.8042954, 0.8291694, 0.8918381, 1)
+
+[sub_resource type="Sky" id="Sky_ojqrr"]
+sky_material = SubResource("ProceduralSkyMaterial_lx3qq")
+
+[sub_resource type="Environment" id="Environment_fke1l"]
+background_mode = 1
+background_color = Color(4.813075e-06, 0.536896, 0.73610485, 1)
+sky = SubResource("Sky_ojqrr")
+ambient_light_source = 2
+ambient_light_color = Color(0.8349884, 0.8207631, 0.76696384, 1)
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.12043371, 0.5700398, 0.9088943, 1)
+fog_height = -1.6
+fog_height_density = 0.5511
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_geiq8"]
+albedo_texture = ExtResource("5_geiq8")
+uv1_scale = Vector3(3.16, 3.16, 3.16)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_geiq8"]
+material = SubResource("StandardMaterial3D_geiq8")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_geiq8"]
+
+[node name="MainLevel" type="Node3D" unique_id=591858332]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1439841541]
+environment = SubResource("Environment_fke1l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1713467211]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=320614119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_fke1l")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1710944724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -5, 0)
+use_collision = true
+size = Vector3(5, 10, 10)
+material = ExtResource("1_fke1l")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1293333704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -5, 16)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_fke1l")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=828771336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -5, 17.5)
+use_collision = true
+size = Vector3(10, 10, 7)
+material = ExtResource("1_fke1l")
+
+[node name="Player" parent="." unique_id=58361335 instance=ExtResource("1_lx3qq")]
+
+[node name="Reticle" type="TextureRect" parent="." unique_id=816686993]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ojqrr")
+
+[node name="Target" parent="." unique_id=1793824247 instance=ExtResource("4_hn3as")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -5)
+
+[node name="Target2" parent="." unique_id=1702920969 instance=ExtResource("4_hn3as")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -5)
+
+[node name="Target3" parent="." unique_id=2082980227 instance=ExtResource("4_hn3as")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
+
+[node name="Target4" parent="." unique_id=1205068001 instance=ExtResource("4_hn3as")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -5)
+
+[node name="Target5" parent="." unique_id=38617236 instance=ExtResource("4_hn3as")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -5)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=198472792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017663956, 0.5, 4.083884)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=1893038394]
+mesh = SubResource("SphereMesh_geiq8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=789506811]
+shape = SubResource("SphereShape3D_geiq8")
